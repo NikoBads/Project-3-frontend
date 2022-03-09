@@ -10,7 +10,7 @@ export const get = (route) => {
   return axios.get(`${url}${route}`, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: token, //the token goes here
+      Authorization: `Bearer ${token}`, //the token goes here
     },
   });
 };
@@ -23,7 +23,7 @@ export const post = (route, body) => {
   return axios.post(`${url}${route}`, body, {
     headers: {
       "Content-Type": "application/json",
-      Authorization: token, //the token goes here
+      Authorization: `Bearer ${token}`, //the token goes here
     },
   });
 };

@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .App-logo {
@@ -36,4 +38,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar {
+  width: 100%;
+  text-align: center;
+  > li {
+    float: none;
+    display: inline-block;
+  }
+}
+
+.css-1dq4j2e {
+  background-color: #282c34;
+}
+
+.css-e4n45b {
+  background-color: #282c34;
+}
+
+.button-links {
+  margin: 1em;
+  display: inline-block;
+  outline: 0;
+  background: #575a68;
+  color: white;
+  white-space: nowrap;
+  padding: 0.9em 1.6em;
+  line-height: 0;
+  text-decoration: none;
+  text-shadow: 0 -1px #000;
+  font-family: Helvetica;
+  font-weight: normal;
+  box-shadow: 1px 1px 0px #262b3f, 2px 2px 0px #262b3f, 3px 3px 0px #262b3f,
+    4px 4px 0px #262b3f, 5px 5px 0px #262b3f, 6px 6px 0px black;
+  position: relative;
+  top: -5px;
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+}
+.button-links:hover {
+  color: #eee;
+  background: #1b1b1b;
+  box-shadow: 1px 1px 0px black, 2px 2px 0px black, 3px 3px 0px black,
+    4px 4px 0px black;
+  position: relative;
+  top: -3px;
+  left: 2px;
+  transition: all 0.1s ease-in-out;
+}
+.button-links:active {
+  box-shadow: 1px 1px 0px #3852b1, 2px 2px 0px black;
+  position: relative;
+  top: -1px;
+  left: 4px;
+  transition: all 0.1s ease-in-out;
 }

@@ -7,12 +7,21 @@ import { Box, Card, Image, Heading, Text, Button } from "rebass";
 import { Label, Input, Select, Textarea, Radio, Checkbox } from "@rebass/forms";
 
 const ThreadListRow = ({ thread }) => {
+  const navigate = useNavigate();
+
   const upVoteThread = () => {
     post(`/api/claims/upvote/claim/${thread._id}`);
+    navigate("/");
   };
 
   const downVoteThread = () => {
     post(`/api/claims/downvote/claim/${thread._id}`);
+    navigate("/");
+  };
+
+  const deleteThread = () => {
+    post(`/delete/comment/${thread._id}`);
+    navigate("/");
   };
 
   return (
@@ -33,6 +42,7 @@ const ThreadListRow = ({ thread }) => {
         >
           <Heading> {thread.title} </Heading>
           <Box style={{ display: "flex", justifyContent: "space-between" }}>
+            {localStorage.getItem("token") ? <Button>remove</Button> : <></>}
             <Text fontSize={0}>User: {thread.creator.name}</Text>
             <Text fontSize={0}>
               {new Date(thread.createdAt).toLocaleDateString("en-US", {
@@ -53,8 +63,18 @@ const ThreadListRow = ({ thread }) => {
             {thread.upVoted.length - thread.downVoted.length}
           </Box>
           <Box style={{ display: "flex", flexDirection: "column" }}>
-            <Button onClick={upVoteThread}>👍</Button>
-            <Button onClick={downVoteThread}>👎</Button>
+            <Button
+              style={{ display: "flex", flexDirection: "column" }}
+              onClick={upVoteThread}
+            >
+              👍
+            </Button>
+            <Button
+              style={{ display: "flex", flexDirection: "column" }}
+              onClick={downVoteThread}
+            >
+              👎
+            </Button>
           </Box>
         </Box>
       </Box>

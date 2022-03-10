@@ -14,7 +14,7 @@ const Navbar = () => {
   };
   if (localStorage.getItem("token")) {
     return (
-      <Box p={3} fontSize={4} color="white">
+      <Box p={3} fontSize={3} color="gray">
         <Button as={Link} color="gray" to="/">
           Home
         </Button>{" "}
@@ -25,10 +25,10 @@ const Navbar = () => {
     );
   } else {
     return (
-      <Box p={3} fontSize={4} color="white">
+      <Box p={3} fontSize={3} color="white">
         <Button as={Link} color="gray" to="/">
           Home
-        </Button>{" "}
+        </Button>
         <Button as={Link} color="gray" to="/signup">
           Signup
         </Button>

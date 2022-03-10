@@ -28,13 +28,15 @@ const SearchClaimsDB = () => {
 
   return (
     <Box>
-      <Text style={{ fontSize: ".9em" }}>
+      <Text style={{ fontSize: ".8em", textAlign: "left" }}>
         While information has helped people stay safe throughout these modern
-        times, it has at times led to confusion. The United Nations has
+        times, it has at times led to confusion. Conducting online research can
+        be frustrating and many sources are unreliable. The United Nations has
         characterized this unprecedented spread of information as an
-        "infodemic".
-        <br />
-        Use our search tool below to browse through a database of fact-checked
+        "infodemic". It is important that your resources are well reasoned and
+        based on strong evidence!
+        <hr />
+        This search tool allows you to browse through a database of fact-checked
         claims and see if what you've been reading online has been verified!
       </Text>
       <Box as="form" onSubmit={searchClaims} style={{ display: "flex" }}>

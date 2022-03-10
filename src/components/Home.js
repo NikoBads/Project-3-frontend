@@ -14,7 +14,28 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Heading>projectfactcheck</Heading>
+        <Heading
+          style={{ fontSize: "2em", padding: "3px", fontFamily: "helvetica" }}
+        >
+          project-fact-check
+        </Heading>
+      </div>
+      <div>
+        <a
+          className="button-links"
+          href="https://en.wikipedia.org/wiki/Wikipedia:Reliable_sources"
+        >
+          Wikipedia:ReliableSources
+        </a>
+        <a className="button-links" href="https://news.google.com">
+          Google News
+        </a>
+        <a
+          className="button-links"
+          href="https://en.wikipedia.org/wiki/List_of_fact-checking_websites#United_States"
+        >
+          List of fact-checking websites in the US
+        </a>
       </div>
       <div
         style={{

@@ -55,7 +55,7 @@ const Signup = () => {
           defaultValue="Username"
         />
       </Box>
-      <Button color="gray" my={4} py={2} bg="navy" type="submit">
+      <Button className="button-links" m="10px" type="submit">
         Join the conversation!
       </Button>
     </Box>

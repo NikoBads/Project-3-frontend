@@ -28,7 +28,16 @@ const SearchClaimsDB = () => {
 
   return (
     <Box>
-      <Box as="form" onSubmit={searchClaims}>
+      <Text style={{ fontSize: ".9em" }}>
+        While information has helped people stay safe throughout these modern
+        times, it has at times led to confusion. The United Nations has
+        characterized this unprecedented spread of information as an
+        "infodemic".
+        <br />
+        Use our search tool below to browse through a database of fact-checked
+        claims and see if what you've been reading online has been verified!
+      </Text>
+      <Box as="form" onSubmit={searchClaims} style={{ display: "flex" }}>
         <Input
           value={query}
           onChange={(e) => {
@@ -53,8 +62,7 @@ const SearchClaimsDB = () => {
                 Validity: {claim.claimReview[0].textualRating}
               </Text>
               <a href={claim.claimReview[0].url} style={{ fontSize: ".8em" }}>
-                {" "}
-                Read More{" "}
+                Read More
               </a>
             </Card>
           ))}

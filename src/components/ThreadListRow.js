@@ -7,6 +7,14 @@ import { Box, Card, Image, Heading, Text, Button } from "rebass";
 import { Label, Input, Select, Textarea, Radio, Checkbox } from "@rebass/forms";
 
 const ThreadListRow = ({ thread }) => {
+  const upVoteThread = () => {
+    post(`/api/claims/upvote/claim/${thread._id}`);
+  };
+
+  const downVoteThread = () => {
+    post(`/api/claims/downvote/claim/${thread._id}`);
+  };
+
   return (
     <Card
       sx={{
@@ -15,10 +23,40 @@ const ThreadListRow = ({ thread }) => {
         boxShadow: "0 0 16px rgba(0, 0, 0, .25)",
       }}
     >
-      <Heading> {thread.title} </Heading>
-      <Box d="flex">
-        <Text fontSize={0}>User: {thread.creator.name}</Text>
-        <Text fontSize={0}> {thread.createdAt}</Text>
+      <Box style={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+          }}
+        >
+          <Heading> {thread.title} </Heading>
+          <Box style={{ display: "flex", justifyContent: "space-between" }}>
+            <Text fontSize={0}>User: {thread.creator.name}</Text>
+            <Text fontSize={0}>
+              {new Date(thread.createdAt).toLocaleDateString("en-US", {
+                timeZone: "UTC",
+              })}
+            </Text>
+          </Box>
+        </Box>
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            padding: "3px",
+          }}
+        >
+          <Box style={{ fontSize: "1.5em", padding: ".5em" }}>
+            {thread.upVoted.length - thread.downVoted.length}
+          </Box>
+          <Box style={{ display: "flex", flexDirection: "column" }}>
+            <Button onClick={upVoteThread}>👍</Button>
+            <Button onClick={downVoteThread}>👎</Button>
+          </Box>
+        </Box>
       </Box>
     </Card>
   );

@@ -10,6 +10,7 @@ ReactDOM.render(
     <Router>
       <App />
     </Router>
+    <p style={{ fontSize: ".6em" }}>version 0.0.5</p>
   </React.StrictMode>,
   document.getElementById("root")
 );

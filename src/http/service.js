@@ -23,6 +23,9 @@ export const post = (route, body) => {
   return axios.post(`${url}${route}`, body, {
     headers: {
       "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": true,
+      "Access-Control-Allow-Credentials": true,
+
       Authorization: `Bearer ${token}`, //the token goes here
     },
   });

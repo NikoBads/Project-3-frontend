@@ -37,11 +37,13 @@ const CreateClaim = ({ claimsAdded, setClaimsAdded }) => {
   }, []);
 
   return (
-    <Box as="form" onSubmit={addClaim} width={["100%"]} p={2}>
+    <Box as="form" onSubmit={addClaim} width={["100%"]} p={1}>
       <Box>
         <Label htmlFor="title">Login to add a claim for discussion!</Label>
-        <Input onChange={(e) => setTitle(e.target.value)} />
-        <Button type="submit">Add</Button>
+        <div style={{ display: "flex" }}>
+          <Input onChange={(e) => setTitle(e.target.value)} />
+          <Button type="submit">Add</Button>
+        </div>
       </Box>
     </Box>
   );

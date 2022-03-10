@@ -14,8 +14,7 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Heading>Stay Informed!</Heading>
-        <Text>Media literacy is an important and valuable tool!</Text>
+        <Heading>projectfactcheck</Heading>
       </div>
       <div
         style={{

@@ -7,14 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  height: auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-div div img {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: -4px;
+.big-picture {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+.picture {
+}
+
+img {
 }

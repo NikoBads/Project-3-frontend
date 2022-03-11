@@ -4,27 +4,17 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import layeredwaveshaikei from "./public/layered-waves-haikei.svg";
+import layeredwaveshaikei from "./public/stacked-waves-haikei.svg";
 
 ReactDOM.render(
   <React.StrictMode>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-      }}
-    >
-      <>
-        <Router>
-          <App />
-        </Router>
-      </>
+    <>
+      <Router>
+        <App />
+      </Router>
+    </>
 
-      <>
-        <img src={layeredwaveshaikei} />
-      </>
-    </div>
+    <img src={layeredwaveshaikei} />
   </React.StrictMode>,
   document.getElementById("root")
 );
